@@ -1,20 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+const int MAX_SIZE = 100;
 
 struct Stack
 {
-    int *arr;
+    int arr[100];
     int size;
     int top;
 };
 
-struct Stack *createStack(int size)
+struct Stack createStack(int size)
 {
-    struct Stack *stack = (struct Stack *)malloc(sizeof(struct Stack));
-    stack->size = size;
-    stack->arr = (int *)malloc(sizeof(int) * stack->size);
-    stack->top = -1;
+    struct Stack stack;
+    if (size > MAX_SIZE)
+    {
+        printf("MAX SIZE EXCEEDED");
+        exit(1);
+    }
+    stack.size = size;
+    stack.top = -1;
     return stack;
 }
 
@@ -66,9 +71,8 @@ void traverse(struct Stack *s)
         printf("Stack is empty\n");
     else
     {
-        for (int i = 0; i <= s->top; i++)
-            printf("%d ", s->arr[i]);
-        printf("\n");
+        for (int i = s->top; i >= 0; i--)
+            printf("%d\n", s->arr[i]);
     }
 }
 
@@ -78,7 +82,7 @@ int main()
     printf("Enter size: ");
     scanf("%d", &size);
 
-    struct Stack *s = createStack(size);
+    struct Stack s = createStack(size);
 
     while (true)
     {
@@ -99,19 +103,19 @@ int main()
         case 1:
             printf("Enter value: ");
             scanf("%d", &value);
-            push(s, value);
+            push(&s, value);
             break;
 
         case 2:
-            pop(s);
+            pop(&s);
             break;
 
         case 3:
-            printf("Peek: %d", peek(s));
+            printf("Peek: %d\n", peek(&s));
             break;
 
         case 4:
-            traverse(s);
+            traverse(&s);
             break;
 
         case 5:
@@ -123,9 +127,6 @@ int main()
             break;
         }
     }
-
-    free(s->arr);
-    free(s);
 
     return 0;
 }
