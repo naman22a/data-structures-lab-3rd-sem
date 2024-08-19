@@ -41,7 +41,14 @@ int main()
     printf("Enter n: ");
     scanf("%d", &n);
 
-    int *arr = (int *)malloc(sizeof(int) * n);
+    // int *arr = (int *)malloc(sizeof(int) * n);
+    int arr[100];
+    if (n > 100)
+    {
+        printf("MAX SIZE EXCEED");
+        exit(1);
+    }
+
     inputArray(arr, n);
     printArray(arr, n);
 
