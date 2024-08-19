@@ -23,16 +23,19 @@ struct Stack createStack(int size)
     return stack;
 }
 
+// TC: O(1)
 bool isEmpty(struct Stack *s)
 {
     return s->top == -1;
 }
 
+// TC: O(1)
 bool isFull(struct Stack *s)
 {
     return s->top == s->size - 1;
 }
 
+// TC: O(1)
 void push(struct Stack *s, int value)
 {
     if (isFull(s))
@@ -45,6 +48,7 @@ void push(struct Stack *s, int value)
     }
 }
 
+// TC: O(1)
 int pop(struct Stack *s)
 {
     if (isEmpty(s))
@@ -57,6 +61,7 @@ int pop(struct Stack *s)
     }
 }
 
+// TC: O(1)
 int peek(struct Stack *s)
 {
     if (isEmpty(s))
@@ -65,6 +70,7 @@ int peek(struct Stack *s)
         return s->arr[s->top];
 }
 
+// TC: O(N)
 void traverse(struct Stack *s)
 {
     if (isEmpty(s))
