@@ -7,7 +7,7 @@
     - peek
     - traverse
 3. Sorting
-    - Bubble Sort
     - Selection Sort
+    - Bubble Sort
     - Insertion Sort
     - Merge Sort
