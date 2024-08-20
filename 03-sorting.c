@@ -175,7 +175,9 @@ int main()
     }
 
     printArray(arr, n);
+
     free(arr);
+    arr = NULL;
 
     return 0;
 }
