@@ -6,3 +6,8 @@
     - pop
     - peek
     - traverse
+3. Sorting
+    - Bubble Sort
+    - Selection Sort
+    - Insertion Sort
+    - Merge Sort
