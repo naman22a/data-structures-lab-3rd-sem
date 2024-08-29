@@ -7,7 +7,14 @@
     - peek
     - traverse
 3. Sorting
-    - Selection Sort
+    <!-- Program 3(a) -->
+    <!-- 20-08-24 date -->
+
     - Bubble Sort
     - Insertion Sort
+
+    <!-- Program 3(b) -->
+    <!-- 27-08-24 date -->
+
     - Merge Sort
+    - Selection Sort
