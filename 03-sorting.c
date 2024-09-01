@@ -8,22 +8,6 @@ void swap(int *a, int *b);
 
 // TC: O(N^2)
 // SC: O(1)
-void selection_sort(int arr[], int n)
-{
-    for (int i = 0; i <= n - 2; i++)
-    {
-        int mini = i;
-        for (int j = i; j <= n - 1; j++)
-        {
-            if (arr[j] < arr[mini])
-                mini = j;
-        }
-        swap(&arr[mini], &arr[i]);
-    }
-}
-
-// TC: O(N^2)
-// SC: O(1)
 void bubble_sort(int arr[], int n)
 {
     // (n - 1) passes
@@ -66,7 +50,8 @@ void mergeArrays(int arr[], int left, int mid, int right)
     int n2 = right - mid;
 
     // create temporary arrays
-    int left_array[n1], right_array[n2];
+    int *left_array = (int *)malloc(sizeof(int) * n1);
+    int *right_array = (int *)malloc(sizeof(int) * n2);
 
     // copy data to temporary arrays
     for (int i = 0; i < n1; i++)
@@ -108,6 +93,12 @@ void mergeArrays(int arr[], int left, int mid, int right)
         j++;
         k++;
     }
+
+    free(left_array);
+    left_array = NULL;
+
+    free(right_array);
+    right_array = NULL;
 }
 
 void ms(int arr[], int left, int right)
@@ -131,6 +122,22 @@ void merge_sort(int arr[], int n)
     ms(arr, 0, n - 1);
 }
 
+// TC: O(N^2)
+// SC: O(1)
+void selection_sort(int arr[], int n)
+{
+    for (int i = 0; i <= n - 2; i++)
+    {
+        int mini = i;
+        for (int j = i; j <= n - 1; j++)
+        {
+            if (arr[j] < arr[mini])
+                mini = j;
+        }
+        swap(&arr[mini], &arr[i]);
+    }
+}
+
 int main()
 {
     int n;
@@ -141,38 +148,10 @@ int main()
     inputArray(arr, n);
     printArray(arr, n);
 
-    printf("=========== MENU ===========\n");
-    printf("1. Selection Sort\n");
-    printf("2. Bubble Sort\n");
-    printf("3. Insertion Sort\n");
-    printf("4. Merge Sort\n");
-    printf("5. Exit\n");
-
-    int option;
-    printf("Enter option(1-5): ");
-    scanf("%d", &option);
-
-    switch (option)
-    {
-    case 1:
-        selection_sort(arr, n);
-        break;
-    case 2:
-        bubble_sort(arr, n);
-        break;
-    case 3:
-        insertion_sort(arr, n);
-    case 4:
-        merge_sort(arr, n);
-        break;
-    case 5:
-        exit(0);
-        break;
-
-    default:
-        printf("Invalid option");
-        break;
-    }
+    bubble_sort(arr, n);
+    insertion_sort(arr, n);
+    merge_sort(arr, n);
+    selection_sort(arr, n);
 
     printArray(arr, n);
 
