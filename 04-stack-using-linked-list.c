@@ -8,6 +8,7 @@ struct Node
     struct Node *next;
 };
 
+// TC: O(N)
 void display(struct Node *head)
 {
     struct Node *cur = head;
@@ -18,6 +19,7 @@ void display(struct Node *head)
     }
 }
 
+// TC: O(1)
 void push(struct Node **head, int value)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
@@ -33,6 +35,7 @@ void push(struct Node **head, int value)
     *head = newNode;
 }
 
+// TC: O(1)
 void pop(struct Node **head)
 {
     if (head == NULL)
@@ -46,6 +49,7 @@ void pop(struct Node **head)
     free(temp);
 }
 
+// TC: O(1)
 int peek(struct Node *head)
 {
     if (head == NULL)
