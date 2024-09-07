@@ -9,7 +9,7 @@ struct Node
 };
 
 // TC: O(N)
-void display(struct Node *head)
+void traverse(struct Node *head)
 {
     struct Node *cur = head;
     while (cur != NULL)
@@ -20,33 +20,36 @@ void display(struct Node *head)
 }
 
 // TC: O(1)
-void push(struct Node **head, int value)
+struct Node *push(struct Node *head, int value)
 {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
 
+    // check if memory is available
     if (newNode == NULL)
     {
         printf("Stack overflow error\n");
-        return;
+        return head;
     }
 
     newNode->data = value;
-    newNode->next = *head;
-    *head = newNode;
+    newNode->next = head;
+    head = newNode;
+    return head;
 }
 
 // TC: O(1)
-void pop(struct Node **head)
+struct Node *pop(struct Node *head)
 {
     if (head == NULL)
     {
         printf("Stack underflow error\n");
-        return;
+        return head;
     }
 
-    struct Node *temp = *head;
-    *head = (*head)->next;
+    struct Node *temp = head;
+    head = head->next;
     free(temp);
+    return head;
 }
 
 // TC: O(1)
@@ -61,14 +64,49 @@ int main()
 {
     struct Node *head = NULL;
 
-    push(&head, 10);
-    push(&head, 20);
-    push(&head, 30);
-    pop(&head);
+    while (true)
+    {
+        printf("=========== MENU ===========\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Peek\n");
+        printf("4. Traverse\n");
+        printf("5. Exit\n");
 
-    display(head);
+        int option;
+        printf("Enter option(1-5): ");
+        scanf("%d", &option);
 
-    printf("Peek: %d", peek(head));
+        int value;
+        switch (option)
+        {
+        case 1:
+            printf("Enter value: ");
+            scanf("%d", &value);
+            head = push(head, value);
+            break;
+
+        case 2:
+            head = pop(head);
+            break;
+
+        case 3:
+            printf("Peek: %d\n", peek(head));
+            break;
+
+        case 4:
+            traverse(head);
+            break;
+
+        case 5:
+            exit(0);
+            break;
+
+        default:
+            printf("Invalid option\n");
+            break;
+        }
+    }
 
     return 0;
 }
