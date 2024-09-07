@@ -1,31 +1,19 @@
 # 📘 Data Structures Lab Codes
 
-<!-- 6-08-24 date -->
+1. WAP for Linear search and Binary search (6-08-24)
+2. WAP to implement stack operations using Array (13-08-24)
 
-1. WAP for Linear search and Binary search
+    - push
+    - pop
+    - peek
+    - traverse
 
-<!-- 13-08-24 date -->
+3. Sorting
 
-2.  WAP to implement stack operations using Array
+    - Bubble Sort (20-08-24)
+    - Insertion Sort (20-08-24)
 
-    -   push
-    -   pop
-    -   peek
-    -   traverse
+    - Merge Sort (27-08-24)
+    - Selection Sort (27-08-24)
 
-3.  Sorting
-    <!-- Program 3(a) -->
-    <!-- 20-08-24 date -->
-
-    -   Bubble Sort
-    -   Insertion Sort
-
-    <!-- Program 3(b) -->
-    <!-- 27-08-24 date -->
-
-    -   Merge Sort
-    -   Selection Sort
-
-<!-- 3-09-24 date -->
-
-4.  WAP to implement a Stack using Linked List
+4. WAP to implement a Stack using Linked List (3-09-24)
