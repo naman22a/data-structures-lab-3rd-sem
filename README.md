@@ -17,3 +17,4 @@
     - Selection Sort (27-08-24)
 
 4. WAP to implement a Stack using Linked List (3-09-24)
+5. WAP to implement a Queue using Linked List (10-09-24)
