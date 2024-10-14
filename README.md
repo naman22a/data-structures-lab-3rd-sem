@@ -18,3 +18,13 @@
 
 4. WAP to implement a Stack using Linked List (3-09-24)
 5. WAP to implement a Queue using Linked List (10-09-24)
+6. Create a Linked List with nodes having information about student insert a new node at specified location(17-09-24)
+
+```c
+struct Student {
+    char name[20];
+    char section;
+    int roll_no;
+    char branch[20];
+};
+```
