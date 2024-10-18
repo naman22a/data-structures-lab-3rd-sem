@@ -28,3 +28,5 @@ struct Student {
     char branch[20];
 };
 ```
+
+7. Create a doubly linked list with nodes having information about an employee and perform Insertion at front of doubly linked list and perform deletion at end of that doubly linked list.
