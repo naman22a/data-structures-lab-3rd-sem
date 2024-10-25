@@ -29,4 +29,6 @@ struct Student {
 };
 ```
 
-7. Create a doubly linked list with nodes having information about an employee and perform Insertion at front of doubly linked list and perform deletion at end of that doubly linked list.
+7. Create a doubly linked list with nodes having information about an employee and perform Insertion at front of doubly linked list and perform deletion at end of that doubly linked list. (24-09-24 and 18-10-24)
+8. Create a circular linked list having information about a college and perform Insertion
+   at the front end and perform deletion at the end. (22-10-24)
